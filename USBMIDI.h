@@ -175,7 +175,7 @@ public:
     void sendSysexEndsIn2(uint8_t b0, uint8_t b1);
     void sendSysexEndsIn3(uint8_t b0, uint8_t b1, uint8_t b2);
     void sendSysexPayload(uint8_t *payload, uint32 length);
-
+    void sendPitchBend(int pitchValue, uint8_t channel);
 
     // Overload these in a subclass to get MIDI messages when they come in
     virtual void handleNoteOff(unsigned int channel, unsigned int note, unsigned int velocity);
@@ -196,6 +196,8 @@ public:
     virtual void handleReset(void);
     virtual void handleSysExData(unsigned char data);
     virtual void handleSysExEnd(void);
+    virtual void sendPitchBend(void);
+    
 
 };
 
